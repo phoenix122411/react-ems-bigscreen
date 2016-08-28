@@ -5,7 +5,6 @@ const Line_YHRZ_ChartComponent = React.createClass({
     propTypes: {
     },
     timeTicket: null,
-    count: 51,
     currentIndex: -1,
     getInitialState: function() {
         return {option: this.getOption()};
@@ -37,10 +36,9 @@ const Line_YHRZ_ChartComponent = React.createClass({
         }, 2000);
     },
     fetchNewDate: function() {
-        let option = this.state.option;
-        let dataLen = option.series[0].data.length;
-        this.currentIndex = (this.currentIndex + 1) % dataLen;
-        console.log(this.currentIndex);
+        // let option = this.state.option;
+        // let dataLen = option.series[0].data.length;
+        // this.currentIndex = (this.currentIndex + 1) % dataLen;
     },
     componentDidMount: function() {
         if (this.timeTicket) {
