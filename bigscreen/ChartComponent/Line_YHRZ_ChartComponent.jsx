@@ -10,29 +10,37 @@ const Line_YHRZ_ChartComponent = React.createClass({
     getInitialState: function() {
         return {option: this.getOption()};
     },
+    showToolTip: function(echartObj) {
+        let option = this.state.option;
+        let currentIndex = -1;
+        setInterval(function() {
+            let dataLen = option.series[0].data.length;
+            // 取消之前高亮的图形
+            echartObj.dispatchAction({
+                type: 'downplay',
+                seriesIndex: 0,
+                dataIndex: currentIndex
+            });
+            currentIndex = (currentIndex + 1) % dataLen;
+            // 高亮当前图形
+            echartObj.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: currentIndex
+            });
+            // 显示 tooltip
+            echartObj.dispatchAction({
+                type: 'showTip',
+                seriesIndex: 0,
+                dataIndex: currentIndex
+            });
+        }, 2000);
+    },
     fetchNewDate: function() {
-        let echartObj = getEchartsInstance();
         let option = this.state.option;
         let dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        echartObj.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: this.currentIndex
-        });
         this.currentIndex = (this.currentIndex + 1) % dataLen;
-        // 高亮当前图形
-        echartObj.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: this.currentIndex
-        });
-        // 显示 tooltip
-        echartObj.dispatchAction({
-            type: 'showTip',
-            seriesIndex: 0,
-            dataIndex: this.currentIndex
-        });
+        console.log(this.currentIndex);
     },
     componentDidMount: function() {
         if (this.timeTicket) {
@@ -141,7 +149,8 @@ const Line_YHRZ_ChartComponent = React.createClass({
     },
     render: function() {
         return (
-            <ReactEcharts ref='echarts_react'
+            <ReactEcharts ref='echarts_react' 
+                onChartReady={this.showToolTip} 
                 option={this.state.option} 
                 style={{height: 400}} />
         );
