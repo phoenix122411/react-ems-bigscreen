@@ -1,7 +1,7 @@
 {
-  "name": "echarts-for-react",
-  "version": "1.1.4",
-  "description": "baidu Echarts(v3.0) components for react",
+  "name": "react-ems-bigscreen",
+  "version": "1.0.0",
+  "description": "Echarts(v3.0) Components for React",
   "main": "lib/echarts-for-react",
   "scripts": {
     "start": "webpack-dev-server --watch",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "build-demos": "webpack",
-    "url": "https://github.com/hustcc/echarts-for-react.git"
+    "url": "https://github.com/phoenix122411/react-ems-bigscreen.git"
   },
   "keywords": [
     "react",
@@ -27,12 +27,16 @@
     "graph",
     "react-component"
   ],
-  "author": "hustcc (http://github.com/hustcc)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hustcc/echarts-for-react/issues"
+  "author": {
+    "name": "phoenix122411",
+    "email": "phoenix122411@126.com",
+    "git": "https://github.com/phoenix122411"
   },
-  "homepage": "https://github.com/hustcc/echarts-for-react",
+  "bugs": {
+    "url": "https://github.com/phoenix122411/react-ems-bigscreen/issues"
+  },
+  "homepage": "https://github.com/phoenix122411/react-ems-bigscreen",
   "devDependencies": {
     "babel-cli": "^6.6.0",
     "babel-core": "^6.3.15",

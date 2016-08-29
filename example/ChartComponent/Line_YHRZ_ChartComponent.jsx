@@ -150,7 +150,7 @@ const Line_YHRZ_ChartComponent = React.createClass({
             <ReactEcharts ref='echarts_react' 
                 onChartReady={this.showToolTip} 
                 option={this.state.option} 
-                style={{height: '100%', width: '100%'}} />
+                style={{height: 400}} />
         );
     }
 });

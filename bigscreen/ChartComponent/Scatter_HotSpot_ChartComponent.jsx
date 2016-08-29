@@ -158,7 +158,7 @@ const Scatter_HotSpot_ChartComponent = React.createClass({
             <ReactEcharts ref='echarts_react' 
                 onChartReady={this.showToolTip} 
                 option={this.state.option} 
-                style={{height: 400}} />
+                style={{height: '100%', width: '100%'}} />
         );
     }
 });

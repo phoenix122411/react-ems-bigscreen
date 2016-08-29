@@ -4,8 +4,13 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
   entry: './bigscreen/bigscreen.jsx',
   output: {
-      path:'./',
+      path:__dirname +'/bigscreen/',
+      publicPath:'/bigscreen/',
       filename: 'index.js',
+  },
+  devServer: {
+      inline: true,
+      port: 8080
   },
   module: {
     loaders:[{
