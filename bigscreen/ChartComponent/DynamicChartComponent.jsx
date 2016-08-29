@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactEcharts from '../src/echarts-for-react';
+import ReactEcharts from '../../src/echarts-for-react';
 
 const DynamicChartComponent = React.createClass({
     propTypes: {
