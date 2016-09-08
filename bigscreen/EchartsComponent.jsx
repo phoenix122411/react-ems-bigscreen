@@ -6,6 +6,8 @@ import Mix_JHL_ChartComponent from './ChartComponent/Mix_JHL_ChartComponent.jsx'
 import Scatter_HotSpot_ChartComponent from './ChartComponent/Scatter_HotSpot_ChartComponent.jsx';
 import Mix_NAS_ChartComponent from './ChartComponent/Mix_NAS_ChartComponent.jsx';
 import Mix_DZZD_ChartComponent from './ChartComponent/Mix_DZZD_ChartComponent.jsx';
+import Pie_LXFB_ChartComponent from './ChartComponent/Pie_LXFB_ChartComponent.jsx';
+import Gauge_YBP_ChartComponent from './ChartComponent/Gauge_YBP_ChartComponent.jsx';
 
 const EchartsComponent = React.createClass({
     propTypes: {
@@ -17,6 +19,8 @@ const EchartsComponent = React.createClass({
         if (this.props.name == 'scatter_HotSpot') return (<Scatter_HotSpot_ChartComponent />);
         if (this.props.name == 'mix_NAS') return (<Mix_NAS_ChartComponent />);
         if (this.props.name == 'mix_DZZD') return (<Mix_DZZD_ChartComponent />);
+        if (this.props.name == 'pie_LXFB') return (<Pie_LXFB_ChartComponent />);
+        if (this.props.name == 'gauge_YBP') return (<Gauge_YBP_ChartComponent />);
         return (<DynamicChartComponent />);
     }
 });

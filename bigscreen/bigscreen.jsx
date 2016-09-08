@@ -11,3 +11,5 @@ ReactDOM.render(<EchartsComponent name="mix_JHL" />, document.getElementById('mi
 ReactDOM.render(<EchartsComponent name="scatter_HotSpot" />, document.getElementById('scatter_HotSpot'))
 ReactDOM.render(<EchartsComponent name="mix_NAS" />, document.getElementById('mix_NAS'))
 ReactDOM.render(<EchartsComponent name="mix_DZZD" />, document.getElementById('mix_DZZD'))
+ReactDOM.render(<EchartsComponent name="pie_LXFB" />, document.getElementById('pie_LXFB'))
+ReactDOM.render(<EchartsComponent name="gauge_YBP" />, document.getElementById('gauge_YBP'))
