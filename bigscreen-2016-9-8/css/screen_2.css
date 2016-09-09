@@ -1,4 +1,4 @@
-html {
+﻿html {
 	font-size: 14px;
 	font-family: "微软雅黑";
 	background: #111;
@@ -168,10 +168,10 @@ body {
 	width: 20%;
 	height: 100%;
 	display: inline-block;
-	box-sizing:border-box;
-	/*-moz-box-sizing:border-box; /* Firefox */
-	/*-webkit-box-sizing:border-box; /* Safari */
-	/*border:1px solid #888;*/
+box-sizing:border-box;
+/*-moz-box-sizing:border-box; /* Firefox */
+/*-webkit-box-sizing:border-box; /* Safari */
+/*border:1px solid #888;*/
 }
 
 .centerPart {
@@ -191,19 +191,23 @@ body {
 }
 .left{
 	width: 100%;
-	height:100%;
-	padding: 0;
+	height: 25%;
+
+padding: 0;
 	
 }
 .center{
-	width: 100%;
+		width: 100%;
 	height: 100%;
-	padding: 0;
+
+padding: 0;
 }
 .right{
 	width: 100%;
-	height: 100%;
-	padding: 0;
+	height: 25%;
+	
+padding: 0;
+	
 }
 
 .topH {
@@ -444,7 +448,7 @@ h1 {
 }
 #chartTwo {
 	position: absolute;
-	left: -5.8rem;
+left: -5.8rem;
     top: 0.6rem;
 	padding: 0px;
 	margin: 0px;
@@ -629,8 +633,8 @@ width:110px;
 #many_spline_div{
 	width:100%; 
 	height:80%;
-	margin-left: -1rem;
-	margin-top: 1rem;
+	    margin-left: -1rem;
+	    margin-top: 1rem;
 }
 #funnel_SBPM{
 	width: 100%;
@@ -651,7 +655,7 @@ width:110px;
 	margin-top: -3.2rem;
 }
 #mix_JHL{
-	width: 100%;
+		width: 100%;
 	height: 100%;
 	margin-left: -1.2rem;
 	margin-top: -1rem;
@@ -668,17 +672,12 @@ width:110px;
 	height: 100%;
 }
 #line_YHRZ{
-	width: 100%;
+		width: 100%;
 	height: 90%;
 	margin-top: -1rem;
 }
 .state{
-	width: 100%;
+		width: 100%;
 	height: 100%;
 	margin-top: -1rem;
-}
-.box{
-	width: 100%;
-	height: 25%;
-	display:block;
 }

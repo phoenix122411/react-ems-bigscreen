@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactEcharts from '../../src/echarts-for-react';
 
-const Mix_NAS_ChartComponent = React.createClass({
+const Mix_DZZD_ChartComponent = React.createClass({
     propTypes: {
     },
     timeTicket: null,
@@ -205,21 +205,12 @@ const Mix_NAS_ChartComponent = React.createClass({
     },
     render: function() {
         return (
-            <div className="right col-md-12 col-lg-12 col-sm-12">
-                <div className="topH">
-                    <h1>[ NAS设备状态统计 ]</h1>
-                </div>
-                <div className="Echart">
-                    <div id="mix_NAS" className="state">
-                        <ReactEcharts ref='echarts_react' 
-                        onChartReady={this.showToolTip} 
-                        option={this.state.option} 
-                        style={{height: '100%', width: '100%'}} />
-                    </div>
-                </div>
-            </div>
+            <ReactEcharts ref='echarts_react' 
+                onChartReady={this.showToolTip} 
+                option={this.state.option} 
+                style={{height: '100%', width: '100%'}} />
         );
     }
 });
 
-export default Mix_NAS_ChartComponent;
+export default Mix_DZZD_ChartComponent;

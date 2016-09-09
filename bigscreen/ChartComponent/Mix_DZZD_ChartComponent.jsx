@@ -205,10 +205,19 @@ const Mix_DZZD_ChartComponent = React.createClass({
     },
     render: function() {
         return (
-            <ReactEcharts ref='echarts_react' 
-                onChartReady={this.showToolTip} 
-                option={this.state.option} 
-                style={{height: '100%', width: '100%'}} />
+            <div className="left col-md-12 col-lg-12 col-sm-12">
+                <div className="topH">
+                    <h1>[ 定制终端设备状态统计 ]</h1>
+                </div>
+                <div className="Echart" ui-view="chart_2">
+                    <div id="mix_DZZD" className="state">
+                        <ReactEcharts ref='echarts_react' 
+                        onChartReady={this.showToolTip} 
+                        option={this.state.option} 
+                        style={{height: '100%', width: '100%'}} />
+                    </div>
+                </div>
+            </div>
         );
     }
 });

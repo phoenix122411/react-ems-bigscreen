@@ -113,19 +113,10 @@ const Mix_JHL_ChartComponent = React.createClass({
     },
     render: function() {
         return (
-            <div className="right col-md-12 col-lg-12 col-sm-12">
-                <div className="topH">
-                    <h1>[ 胖ap激活率统计 ]</h1>
-                </div>
-                <div className="Hchart">
-                    <div id="mix_JHL">
-                        <ReactEcharts ref='echarts_react' 
-                        onChartReady={this.showToolTip} 
-                        option={this.state.option} 
-                        style={{height: '100%', width: '100%'}} />
-                    </div>
-                </div>
-            </div>
+            <ReactEcharts ref='echarts_react' 
+                onChartReady={this.showToolTip} 
+                option={this.state.option} 
+                style={{height: '100%', width: '100%'}} />
         );
     }
 });

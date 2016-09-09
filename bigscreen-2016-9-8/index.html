@@ -26,24 +26,43 @@
 		</footer>
 		<!--以下是左侧4栏-->
 		<div class="leftPart">
-			<div id='part_1_1' class="box">
-				<div class="left col-md-12 col-lg-12 col-sm-12">
-					<div class="topH">
-						<h1>[ 平台用户总量 ]</h1>
-					</div>
-					<div class="Hchart" style="position: relative;">
-						<div id="areas_YHZL"></div>
-						<div id="textname">
-							<ul style="font-size: 1.4rem;">
-								<li> <i style="background: #367bdb;"></i>用户数量：<i id="areaspline1">343242424</i> <span></span></li>
-							</ul>
-						</div>
+			<div class="left col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1>[ 平台用户总量 ]</h1></div>
+				<div class="Hchart" style="position: relative;">
+					<!--<script type="text/javascript" src="${basePath}/ems/bigscreen_show/chart/js/areas_YHZL.js"></script>-->
+
+					<div id="areas_YHZL"></div>
+					<div id="textname">
+						<ul style="font-size: 1.4rem;">
+							<li> <i style="background: #367bdb;"></i>用户数量：<i id="areaspline1">343242424</i> <span></span></li>
+						</ul>
 					</div>
 				</div>
 			</div>
-            <div id='part_2_1' class="box"></div>
-			<div id='part_3_1' class="box"></div>
-			<div id='part_4_1' class="box"></div>
+
+			<div class="left col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1 style="	position: absolute;top: 0;">[ 定制终端设备状态统计 ]</h1></div>
+				<div class="Echart" ui-view="chart_2">
+					<div id="mix_DZZD" class="state"></div>
+				</div>
+			</div>
+			<div class="left col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1 style="	position: absolute;top: 0;">[ 设备类型分布 ]</h1></div>
+				<div class="Echart">
+					<div id='pie_LXFB'></div>
+				</div>
+			</div>
+			<div class="left col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1 style="	position: absolute;top: 0;">[ 全省设备排名 ]</h1></div>
+				<div class="Echart" ui-view="chart_2">
+					<!--<div id="funnel_SBPM_old"></div>-->
+					<div id="funnel_SBPM" ></div>
+				</div>
+			</div>
 		</div>
 
 		<!--以下是中心1栏-->
@@ -90,23 +109,49 @@
 
 		<!--以下是右侧4栏-->
 		<div class="rightPart">
-			<div id='part_1_5' class="box"></div>
-			<div id='part_2_5' class="box"></div>
-			<div id='part_3_5' class="box"></div>
-			<div id='part_4_5' class="box"></div>
+			<div class="right col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1>[ 用户认证状态 ]</h1></div>
+				<div class="Echart">
+					<!--<div id="textname" style="top: 4.8rem;">
+						<ul style="font-size: 1.4rem;">
+							<li> <i style="background: #367bdb;"></i>胖AP：<i id="areaspline1">343242424</i> <span></span></li>
+							<li><i style="background: #00d9bc;"></i>光猫：<i id="areaspline2">54654645654</i><span></span></li>
+							<li><i style="background: #ff5f5f;"></i>三合一融合备份：<i id="areaspline3">3242435</i><span></span></li>
+						</ul>
+					</div>-->
+					<!--<div id="many_spline_div"></div>-->
+					<div id="line_YHRZ"></div>
+				</div>
+
+			</div>
+			<div class="right col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1>[ NAS设备状态统计 ]</h1></div>
+				<div class="Echart">
+					<!--<div id="pie_JHL_old"></div>-->
+					<!--<div id="rate" style="width: 100%;height: 90%;"></div>-->
+					<div id="mix_NAS" class="state"></div>
+				</div>
+
+			</div>
+			<div class="right col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1>[ 爱wifi热点类型分布 ]</h1></div>
+				<div class="Echart" >
+					<div id="scatter_HotSpot"></div>
+				</div>
+			</div>
+			<div class="right col-md-12 col-lg-12 col-sm-12">
+				<div class="topH">
+					<h1>[ 胖ap激活率统计 ]</h1></div>
+				<div class="Hchart">
+					<div id="mix_JHL"></div>
+				</div>
+			</div>
 		</div>
 
 		<!--以下是js-->
-		<script type="text/javascript">
-			var chartNameList = [["line_YHRZ", "part_4_5"], 
-			["funnel_SBPM", "part_2_1"], 
-			["mix_JHL", "part_3_1"], 
-			["scatter_HotSpot", "part_4_1"], 
-			["mix_NAS", "part_1_5"], 
-			["mix_DZZD", "part_2_5"], 
-			["pie_LXFB", "part_3_5"], 
-			["gauge_YBP", "gauge_YBP"]];
-		</script>
 		<script src="index.js"></script>
 		<script src="js/screen.js" type="text/javascript" charset="utf-8"></script>
 		
@@ -223,4 +268,5 @@
 			}
 		</script>
 	</body>
+
 </html>

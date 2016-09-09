@@ -155,19 +155,10 @@ const Funnel_SBPM_ChartComponent = React.createClass({
     },
     render: function() {
         return (
-            <div className="left col-md-12 col-lg-12 col-sm-12">
-                <div className="topH">
-                    <h1>[ 全省设备排名 ]</h1>
-                </div>
-                <div className="Echart" ui-view="chart_2">
-                    <div id="funnel_SBPM" >
-                        <ReactEcharts ref='echarts_react' 
-                        onChartReady={this.showToolTip} 
-                        option={this.state.option} 
-                        style={{height: '100%', width: '100%'}}  />
-                    </div>
-                </div>
-            </div>
+            <ReactEcharts ref='echarts_react' 
+                onChartReady={this.showToolTip} 
+                option={this.state.option} 
+                style={{height: '100%', width: '100%'}}  />
         );
     }
 });
