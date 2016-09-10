@@ -95,131 +95,131 @@
 			<div id='part_3_5' class="box"></div>
 			<div id='part_4_5' class="box"></div>
 		</div>
-
-		<!--以下是js-->
-		<script type="text/javascript">
-			var chartNameList = [["line_YHRZ", "part_2_1"], 
-			["funnel_SBPM", "part_3_1"], 
-			["mix_JHL", "part_4_1"], 
-			["scatter_HotSpot", "part_1_5"], 
-			["mix_NAS", "part_2_5"], 
-			["mix_DZZD", "part_3_5"], 
-			["pie_LXFB", "part_4_5"]];
-		</script>
-		<script src="index.js"></script>
-		<script src="js/screen.js" type="text/javascript" charset="utf-8"></script>
-		
-		<!--以下是map-->
-		<script type="text/javascript" src="moduel/moduel_map/js/lib/raphael-min.js"></script>
-		<script type="text/javascript" src="moduel/moduel_map/js/res/chinaMapConfig.js"></script>
-		<script type="text/javascript" src="moduel/moduel_map/js/map.js"></script>
-
-		<script type="text/javascript">
-			$(function() {
-				// 自定义宽高
-				var mapWidth = 1260;
-				var mapHeight = mapWidth * 0.8;
-
-				$('#ChinaMap1').SVGMap({
-					mapName: 'china',
-					mapWidth: mapWidth,
-					mapHeight: mapHeight,
-					stateInitColor: "",
-					strokeColor: "#6F6BD7",
-					strokeWidth: 1,
-					//  hoverCallback:function(stateData,obj){
-					//  	console.log(stateData);
-					//  	console.log(obj);
-					//  },
-					stateHoverColor: "#d62a37"
-						// showTip:0
-				});
-				$('#ChinaMapBg').SVGMap({
-					mapName: 'china',
-					mapWidth: mapWidth,
-					mapHeight: mapHeight,
-					strokeColor: "#2A0A6D",
-					stateInitColor: "#2A0A6D",
-					stateHoverColor: "#2A0A6D",
-					showTip: 0
-				});
-				$('#ChinaMapBg,#ChinaMap1').css('position', "absolute");
-
-				// 每隔1秒钟，滚播中国地图
-				var num = 0;
-				var china_province = [];
-				for(var name in eval("china" + "MapConfig").names) {
-					china_province.push(name);
-				}
-				var R = Raphael("ChinaMap2", 1000 + 888, 800);
-				setInterval(function() {
-					mapShow(num, china_province);
-					showRect(R, pathPointArr[num], null);
-					num = num + 1;
-					if(num == 34) num = 0;
-				}, 1000 * 5);
-			});
-
-			function mapShow(i, provinces) {
-				var map_svg = $(".map-d").find(".svggroup").find("svg");
-				var map_path = map_svg.find("path");
-				map_path.attr("fill", "none");
-				$(map_path[i]).attr("fill", "#d62a37");
-			}
-
-			/**
-			 * 显示(绘制)信息展示框
-			 * @param {Object} R 画布
-			 * @param {Object} point 区域中心点对象 x y name
-			 * @param {Object} val 区域值or值的集合对象
-			 * By Shown: offset should included in configuration items, an object about 'config'
-			 */
-			function showRect(R, point, val) {
-				R.clear();
-
-				//				偏移量
-				var xx = point.x * 1.8 + 200;
-				var yy = point.y * 1.65 + 135;
-				var name = point.name;
-				var leftRect = {
-					x: xx - 100,
-					y: yy - 50,
-					w: 160,
-					h: 40
-				};
-				var rightRect = {
-						x: xx,
-						y: yy - 50,
-						w: 100,
-						h: 40
-					}
-					//				省都名字的样式
-				var textAttr = {
-					"fill": "#fff",
-					"font-size": "24px",
-					"cursor": "pointer"
-				};
-				left = R.rect(leftRect.x, leftRect.y, leftRect.w, leftRect.h).attr({
-					fill: "#FA3F4D",
-					stroke: "red",
-					"stroke-width": 1,
-					"stroke-opacity": 0.5
-				})
-
-				//				省份字的偏移量
-				ltext = R.text((xx - 50), (yy - 30), name).attr(textAttr);
-				right = R.rect(rightRect.x, rightRect.y, rightRect.w, rightRect.h).attr({
-					fill: "white",
-					stroke: "wihte",
-					"stroke-width": 1,
-					"stroke-opacity": 0.5
-				})
-				rtext = R.text((xx + 50), (yy - 30), Math.floor(1000000 * Math.random())).attr({
-					"fill": "#FA3F4D",
-					"font-size": "24px",
-					"cursor": "pointer"
-				});
-			}
-		</script>
 	</body>
+
+	<!--以下是js-->
+	<script type="text/javascript">
+		var chartNameList = [{chart_path:"line_YHRZ", target_name:"part_2_1"}, 
+		{chart_path:"funnel_SBPM", target_name:"part_3_1"}, 
+		{chart_path:"mix_JHL", target_name:"part_4_1"}, 
+		{chart_path:"scatter_HotSpot", target_name:"part_1_5"}, 
+		{chart_path:"mix_NAS", target_name:"part_2_5"}, 
+		{chart_path:"mix_DZZD", target_name:"part_3_5"}, 
+		{chart_path:"pie_LXFB", target_name:"part_4_5"}];
+	</script>
+	<script src="index.js"></script>
+	<script src="js/screen.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!--以下是map-->
+	<script type="text/javascript" src="moduel/moduel_map/js/lib/raphael-min.js"></script>
+	<script type="text/javascript" src="moduel/moduel_map/js/res/chinaMapConfig.js"></script>
+	<script type="text/javascript" src="moduel/moduel_map/js/map.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			// 自定义宽高
+			var mapWidth = 1260;
+			var mapHeight = mapWidth * 0.8;
+
+			$('#ChinaMap1').SVGMap({
+				mapName: 'china',
+				mapWidth: mapWidth,
+				mapHeight: mapHeight,
+				stateInitColor: "",
+				strokeColor: "#6F6BD7",
+				strokeWidth: 1,
+				//  hoverCallback:function(stateData,obj){
+				//  	console.log(stateData);
+				//  	console.log(obj);
+				//  },
+				stateHoverColor: "#d62a37"
+					// showTip:0
+			});
+			$('#ChinaMapBg').SVGMap({
+				mapName: 'china',
+				mapWidth: mapWidth,
+				mapHeight: mapHeight,
+				strokeColor: "#2A0A6D",
+				stateInitColor: "#2A0A6D",
+				stateHoverColor: "#2A0A6D",
+				showTip: 0
+			});
+			$('#ChinaMapBg,#ChinaMap1').css('position', "absolute");
+
+			// 每隔1秒钟，滚播中国地图
+			var num = 0;
+			var china_province = [];
+			for(var name in eval("china" + "MapConfig").names) {
+				china_province.push(name);
+			}
+			var R = Raphael("ChinaMap2", 1000 + 888, 800);
+			setInterval(function() {
+				mapShow(num, china_province);
+				showRect(R, pathPointArr[num], null);
+				num = num + 1;
+				if(num == 34) num = 0;
+			}, 1000 * 5);
+		});
+
+		function mapShow(i, provinces) {
+			var map_svg = $(".map-d").find(".svggroup").find("svg");
+			var map_path = map_svg.find("path");
+			map_path.attr("fill", "none");
+			$(map_path[i]).attr("fill", "#d62a37");
+		}
+
+		/**
+		 * 显示(绘制)信息展示框
+		 * @param {Object} R 画布
+		 * @param {Object} point 区域中心点对象 x y name
+		 * @param {Object} val 区域值or值的集合对象
+		 * By Shown: offset should included in configuration items, an object about 'config'
+		 */
+		function showRect(R, point, val) {
+			R.clear();
+
+			//				偏移量
+			var xx = point.x * 1.8 + 200;
+			var yy = point.y * 1.65 + 135;
+			var name = point.name;
+			var leftRect = {
+				x: xx - 100,
+				y: yy - 50,
+				w: 160,
+				h: 40
+			};
+			var rightRect = {
+					x: xx,
+					y: yy - 50,
+					w: 100,
+					h: 40
+				}
+				//				省都名字的样式
+			var textAttr = {
+				"fill": "#fff",
+				"font-size": "24px",
+				"cursor": "pointer"
+			};
+			left = R.rect(leftRect.x, leftRect.y, leftRect.w, leftRect.h).attr({
+				fill: "#FA3F4D",
+				stroke: "red",
+				"stroke-width": 1,
+				"stroke-opacity": 0.5
+			})
+
+			//				省份字的偏移量
+			ltext = R.text((xx - 50), (yy - 30), name).attr(textAttr);
+			right = R.rect(rightRect.x, rightRect.y, rightRect.w, rightRect.h).attr({
+				fill: "white",
+				stroke: "wihte",
+				"stroke-width": 1,
+				"stroke-opacity": 0.5
+			})
+			rtext = R.text((xx + 50), (yy - 30), Math.floor(1000000 * Math.random())).attr({
+				"fill": "#FA3F4D",
+				"font-size": "24px",
+				"cursor": "pointer"
+			});
+		}
+	</script>
 </html>
